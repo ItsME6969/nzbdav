@@ -20,6 +20,7 @@ public class GetHistoryController(
         if (request.NzoIds.Count > 0)
             query = query.Where(q => request.NzoIds.Contains(q.Id));
         if (request.Category != null)
+            query = query.Where(q => q.Category == request.Category);
         if (request.Name != null)
             query = query.Where(q => q.JobName == request.Name);
         if (request.Status != null)
